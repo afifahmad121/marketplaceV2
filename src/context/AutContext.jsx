@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
   // Fungsi login: dipanggil setelah request /login atau /register berhasil.
   const login = (token, userData) => {
     localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem + ("user", JSON.stringify(userData));
     setUser(userData);
     setIsSeller(userData.role === "seller");
   };
