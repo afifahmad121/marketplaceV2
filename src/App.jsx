@@ -5,6 +5,7 @@ import { Footer } from "./components/layout/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/layout/Login";
 import { Registration } from "./components/layout/Registration";
+import { Dasboard } from "./components/layout/Dasboard";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 export default function App() {
@@ -19,9 +20,18 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Registration" element={<Registration />} />
 
-          {/* Protected Route (harus logi)  */}
+          {/* Protected Route (harus login)  */}
 
           <Route
+            path="/dasboard"
+            element={
+              <ProtectedRoute>
+                <Dasboard />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* <Route
             path="/users"
             element={
               <ProtectedRoute>
@@ -46,7 +56,7 @@ export default function App() {
                 <Register />
               </ProtectedRoute>
             }
-          />
+          /> */}
         </Routes>
       </>
     </main>
