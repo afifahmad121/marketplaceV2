@@ -1,9 +1,38 @@
 import { useNavigate, Link } from "react-router-dom";
 import { ButtonSubmit } from "../shared/Button";
+import { useAuth } from "../../context/AutContext";
+import { useState } from "react";
 // import DropDown from "../shared/DropDown";
 
 export const Login = () => {
   // const [submitting, setSubmitting] = useState(false);
+
+  const navigate = useNavigate();
+  const { Login, isLoggedIn } = useAuth();
+
+  const [form, setForm] = useState({ email: "", password: "", role });
+  const [errors, setErrors] = useState({});
+  const [serverError, setServerError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email wajib diisi";
+    } else if (!emailRegex.test(form.email)) {
+      newErrors.email = "Format email tidak valid";
+    }
+
+    if (!form.password) newErrors.password = "password wajib diisi";
+
+    return newErrors;
+  };
   return (
     <>
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
