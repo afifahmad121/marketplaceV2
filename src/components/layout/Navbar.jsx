@@ -1,8 +1,20 @@
 import logo from "../../assets/logo/logo.png";
 import { Button } from "../shared/Button";
 import { useNavigate, Link } from "react-router-dom";
+import { apiRequest } from "../../api/client";
+import { useAuth } from "../../context/AutContext";
 
 export const Navbar = () => {
+  const { user, isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await apiRequest("auth/logout", { method: "POST" });
+    } catch (e) {}
+    logout();
+    navigate("/login");
+  };
   return (
     <nav className="flex justify-between items-center px-4 py-2 bg-navbar text-fontWhite border-b border-gray-600">
       <div className="flex items-center gap-2">
@@ -34,7 +46,25 @@ export const Navbar = () => {
             </a>
           </li>
         </ul>
-        <Button title="Login" to="/login" />
+
+        <div className="flex  items-center gap-2">
+          {isLoggedIn ? (
+            <>
+              <span className="">Halo, {user?.username}!</span>
+
+              <button
+                className="bg-button  hover:bg-indigo-500 text-white py-2 px-4 rounded-md text-sm cursor-pointer"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Button title="Login" to="/login" />
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );
