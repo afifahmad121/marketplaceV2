@@ -50,7 +50,7 @@ export const Navbar = () => {
         <div className="flex  items-center gap-2">
           {isLoggedIn ? (
             <>
-              <span className="">Halo, {user?.username}!</span>
+              <span className="text-slate-300">Halo, {user?.username}!</span>
 
               <button
                 className="bg-button  hover:bg-indigo-500 text-white py-2 px-4 rounded-md text-sm cursor-pointer"

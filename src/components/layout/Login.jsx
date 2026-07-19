@@ -56,9 +56,6 @@ export const Login = () => {
     }
   };
 
-  // console.log("isLoggedIn:", isLoggedIn);
-  // console.log("user:", user);
-  // console.log("isLoggedIn:", isLoggedIn);
   if (isLoggedIn) {
     return <Navigate to="/dasboard" replace />;
   }
@@ -70,11 +67,11 @@ export const Login = () => {
             Login
           </h2>
         </div>
-        {serverError && (
+        {/* {serverError && (
           <div className="bg-#fdecea text-yellow-300  px-3 py-2,5 rounded-lg text-[14px] mb-4  ">
             {serverError}
           </div>
-        )}
+        )} */}
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit} noValidate className="space-y-6">
             {/* <form action="#" method="POST" className="space-y-6"></form> */}
@@ -133,13 +130,14 @@ export const Login = () => {
                 )}
               </div>
             </div>
-            <div className="">
+            {/* <div className="">
               <label>Role</label>
               <select
                 required
                 onChange={handleChange}
                 defaultValue={"buyer"}
                 name="role"
+                className="border rounded-md bg-white text-black"
               >
                 <option value="buyer">Buyer</option>
                 <option value="seller">Seller</option>
@@ -149,7 +147,7 @@ export const Login = () => {
                   {errors.role}
                 </small>
               )}
-            </div>
+            </div> */}
             <div>
               <button
                 type="submit"
