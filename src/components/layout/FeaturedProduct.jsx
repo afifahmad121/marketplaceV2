@@ -1,4 +1,4 @@
-import Fetured from "../../assets/img/featured.png";
+import Fetured from "../../assets/img/Featured.png";
 import { Button } from "../shared/Button";
 
 export const FeaturedProduct = () => {
