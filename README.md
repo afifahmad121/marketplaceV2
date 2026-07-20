@@ -217,6 +217,16 @@ Project ini dibuat sebagai latihan dan pembelajaran React.js serta implementasi 
 
 ---
 
+## Akun uji coba untuk login
+
+akun buyer, seller
+
+email : afifaja@gmail.com
+password : password123
+
+email : alimtoko@gmail.com
+password : password123
+
 ## Repo
 
 repo github laravel backend untuk API
