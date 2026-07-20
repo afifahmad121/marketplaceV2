@@ -7,6 +7,7 @@ import { Login } from "./components/layout/Login";
 import { Registration } from "./components/layout/Registration";
 import Dasboard from "./components/layout/Dasboard";
 import Users from "./components/layout/Users";
+import UserDetail from "./components/layout/UserDetail";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 export default function App() {
@@ -38,22 +39,14 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          {/* <Route
+          <Route
             path="/users/:id"
             element={
               <ProtectedRoute>
                 <UserDetail />
               </ProtectedRoute>
             }
-          /> */}
-          {/* <Route
-            path="/register"
-            element={
-              <ProtectedRoute>
-                <Register />
-              </ProtectedRoute>
-            }
-          />  */}
+          />
         </Routes>
       </>
     </main>
