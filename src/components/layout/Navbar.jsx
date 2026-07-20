@@ -35,16 +35,24 @@ export const Navbar = () => {
               Explore
             </a>
           </li>
+
           <li>
             <a href="#" className="hover:text-clickText">
               Categories
             </a>
           </li>
+
           <li>
             <a href="#" className="hover:text-clickText">
               Cart
             </a>
           </li>
+
+          {isLoggedIn && (
+            <li className="hover:text-clickText">
+              <Link to="/users">Users</Link>
+            </li>
+          )}
         </ul>
 
         <div className="flex  items-center gap-2">

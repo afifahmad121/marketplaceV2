@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/layout/Login";
 import { Registration } from "./components/layout/Registration";
 import Dasboard from "./components/layout/Dasboard";
+import Users from "./components/layout/Users";
 import ProtectedRoute from "./components/layout/ProtectedRoute";
 
 export default function App() {
@@ -19,9 +20,7 @@ export default function App() {
           <Route path="/" element={<Footer />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
-
           {/* Protected Route (harus login)  */}
-
           <Route
             path="/dasboard"
             element={
@@ -30,8 +29,8 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
-          {/* <Route
+          /*{" "}
+          <Route
             path="/users"
             element={
               <ProtectedRoute>
@@ -39,24 +38,22 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
-          <Route
+          {/* <Route
             path="/users/:id"
             element={
               <ProtectedRoute>
                 <UserDetail />
               </ProtectedRoute>
             }
-          />
-
-          <Route
+          /> */}
+          {/* <Route
             path="/register"
             element={
               <ProtectedRoute>
                 <Register />
               </ProtectedRoute>
             }
-          /> */}
+          />  */}
         </Routes>
       </>
     </main>
